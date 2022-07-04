@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <div id="div_id"></div> -->
+    <div class="div_class"></div>
+    <div class="div_class"></div>
+    <script>
+        let divIdElem = document.getElementById('div_id');
+        // divIdElem.innerText = '입력';
+
+        let divClassElem = document.getElementsByClassName('div_class'); // 배열로 넘어옴
+        divClassElem[0].innerText = '첫번째 div_class 안에 입력';
+        divClassElem[1].innerText = '두번째 div_class 안에 입력';
+
+    </script>
+</body>
+</html>
