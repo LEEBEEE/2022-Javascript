@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        h1:hover {cursor: pointer;}
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="heading" class="heading" style="color:blue;">자바스크립트</h1>
+    <p id="text" class="heading" onclick="changeColor(this);">위 텍스트를 클릭해보세요.</p>
+    <script>
+
+        function changeColor(target){
+            target.style.color = 'red';
+        }
+
+        var heading = document.querySelector('#heading'); // ES6문법
+        // var heading = document.getElementById('heading'); ES5 문법
+        // 객체는 속성과 메소드로 이루어져 있음
+        // 소괄호가 뒤에 붙으면 메소드
+        heading.onclick = function() {
+            this.style.color = 'red';
+        }
+        heading.onclick = function() {
+            this.style.backgroundColor = 'pink';
+        }
+        // onclick은 최신 이벤트로 교체 addEventListener는 이벤트 추가
+        heading.addEventListener('click', function(){
+            alert('Click!');
+        });
+    </script>
+</body>
+</html>
+
+<!-- onclick이라는 속성에 function을 걸어주면 메소드가 된다 -->
+
+<!-- 
+    void함수 : return값이 없다 
+    非void : return하는 값이 있다
+-->
