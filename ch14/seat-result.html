@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        table,
+        td {
+            border: 1px solid #eee;
+        }
+
+        td {
+            padding: 5px;
+            font-size: 0.9rem;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>자리 배치도</h1>
+    <script>
+        var memNum = Number(prompt('입장객 수'));
+        if(memNum > 0){
+            var colNum = 6;
+            var rowNum = Math.ceil(memNum / colNum);
+            var seat = 1;
+            document.write('<table>');
+                for(var i = 0; i < rowNum; i++){
+                    document.write('<tr>');
+                        for(var j = 1; j <= colNum; j++){
+                            // var seatNo2 = i*colNum + j;
+                            // document.write(seatNo2<=memNum ? `<td>좌석${seatNo2}</td>`: '<td></td>');
+
+                            document.write(seat<=memNum ? `<td>좌석${seat++}</td>`: '<td></td>');
+
+                            // document.write('<td>')
+                            //     if(seat<=memNum){
+                            //         document.write(`좌석${seat++}`);
+                            //     }
+                            //     document.write('</td>')
+
+                        }
+                            document.write('</tr>');
+                        }
+            document.write('</table>');
+        }
+    </script>
+</body>
+</html>

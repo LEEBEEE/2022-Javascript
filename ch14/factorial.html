@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var n = prompt('숫자를 입력하세요 : ');
+        // if(n !== null && n !== ''){
+        //     var fct = 1;
+        //     cnt = Number(n);
+        //     while(cnt > 0){
+        //         fct *= cnt;
+        //         cnt--;
+        //     }
+        //     document.write(`${n}! = ${fct}`);
+        // } else {
+        //     document.write('노 입력');
+        // }
+
+        if(n === null || n === ''){
+            document.write('노 입력');
+        } else {
+            var cnt = Number(n);
+            if(cnt){
+                var result = 1;
+                while(cnt > 0){
+                    result *= cnt--;
+                }
+                document.write(`${n}! = ${result}`);
+            } else {
+                document.write('숫자를 입력해주세요.');
+            }
+        }
+    </script>
+</body>
+</html>
