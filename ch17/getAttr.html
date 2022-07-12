@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="prod-pic">
+        <img src="https://images.pexels.com/photos/1835712/pexels-photo-1835712.jpeg?auto=compress&cs=tinysrgb&w=630&h=375&dpr=1" 
+        alt="바닷가" id="beach" width="300" height="200" style="object-fit: cover;" onclick="displaySrc();" abc="앵">
+        <button onclick="changePic();">이미지 바꾸기</button>
+    </div>
+    <script>
+        const beach = document.querySelector('#beach');
+        function displaySrc() {
+            console.log('.getAttr : ' + beach.getAttribute('abc')); // 으로는 커스텀 속성도 가져올 수 있음
+            console.log('.src : ' + beach.src);
+            console.log('.alt : ' + beach.alt);
+            console.log('.id : ' + beach.id);
+            console.log('.width : ' + beach.width);
+            console.log('.height : ' + beach.height);
+            console.log('.onclick : ' + beach.onclick);
+            console.log('.styleObjectFit : ' + beach.style.objectFit);
+            console.log('.abc : ' + beach.abc); // undefined
+            console.log(beach);
+        }
+
+        function changePic() {
+            // beach.src = 'https://images.pexels.com/photos/1482193/pexels-photo-1482193.jpeg?auto=compress&cs=tinysrgb&w=630&h=375&dpr=1';
+            beach['abc'] = 'under the sea'; // :Q
+            beach.setAttribute('abc', '이게머임');
+            beach.setAttribute('src', 'https://images.pexels.com/photos/1482193/pexels-photo-1482193.jpeg?auto=compress&cs=tinysrgb&w=630&h=375&dpr=1');
+            
+        }
+    </script>
+</body>
+</html>

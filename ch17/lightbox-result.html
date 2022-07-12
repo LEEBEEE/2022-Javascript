@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul { list-style: none; }
+        li { display: inline-block; }
+        .pic { width: 200px; object-fit: cover; cursor: pointer;}
+        #lightbox { 
+            width: 100%;
+            height: 100%; 
+            background-color: #00000066;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            left: 0;
+            top: 0;
+        }
+        #lightbox > img { 
+            border: 2px solid #fff; 
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="row">
+        <ul>
+            <li><img class="pic" src="https://images.pexels.com/photos/2305706/pexels-photo-2305706.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"></li>
+            <li><img class="pic" src="https://images.pexels.com/photos/12279458/pexels-photo-12279458.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"></li>
+            <li><img class="pic" src="https://images.pexels.com/photos/288621/pexels-photo-288621.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"></li>
+        </ul>
+    </div>
+    <div id="lightbox">
+        <img src="" id="lightboxImg">
+    </div>
+    <script>
+        const lightbox = document.querySelector('#lightbox');
+        const lightboxImg = lightbox.querySelector('#lightboxImg');
+        function showLightbox() {
+            const bigLocation = this.src;
+            lightboxImg.setAttribute('src', bigLocation);
+            lightbox.style.display = 'flex';
+        }
+        const pic = document.querySelectorAll('.pic');
+        pic.forEach(item => {
+            item.addEventListener('click', showLightbox);
+        });
+        
+        lightbox.addEventListener('click', () => lightbox.style.display = ''); 
+
+
+    </script>
+</body>
+</html>

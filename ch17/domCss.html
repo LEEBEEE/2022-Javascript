@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #rect {
+            width: 300px;
+            height: 300px;
+            border: 3px solid #eee;
+        }
+    </style>
+</head>
+<body>
+    <div id="rect"></div>
+    <script>
+        const divRect = document.querySelector('#rect');
+        divRect.addEventListener('mouseover', function(){
+            this.style.backgroundColor = '#00AFFF';
+            this.style.borderRadius = '50%';
+            this.style.boxShadow = '5px 5px 10px 5px #eee';
+        }); // 함수 안에 변수를 쓰면 클로저를 이용 this를 쓰면 상수의 주소값을 사용
+        divRect.addEventListener('mouseout', function(){
+            this.style.backgroundColor = '';
+            this.style.borderRadius = '';
+            this.style.boxShadow = '';
+        });
+
+    </script>
+</body>
+</html>

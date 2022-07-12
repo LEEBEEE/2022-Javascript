@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .c_pointer { cursor: pointer; }
+        .parent { display: flex; padding: 10px; width: 50%; }
+        .parent > .content { flex-grow: 1; }
+        .parent > .close { width: 15px; }
+    </style>
+</head>
+<body>
+    <h1>Web Programming</h1>
+    <p>공부할 주제를 기록해 보세요.</p>
+    <div>
+        <input type="text" id="subject" value="">
+        <input type="button" value="추가" onclick="newReg();">
+        <input type="button" value="삭제" onclick="delSubject();">
+    </div>
+    <div id="itemList"></div>
+    <script>
+        const itemList = document.querySelector('#itemList');
+        const subject = document.querySelector('#subject');
+        
+        function newReg() {
+            const pDiv = itemList.appendChild(document.createElement('div'));
+            pDiv.classList.add('parent');
+            pDiv.innerHTML = `
+                <div class="content">${subject.value}</div>
+                <div class="close c_pointer">×</div>
+            `;
+            itemList.appendChild(pDiv);
+            const clsDiv = pDiv.querySelector('.close');
+            clsDiv.addEventListener('click', function(){
+                // pDiv.remove(); // 클로저를 쓰면 메모리에 남으니까 this를 쓰는 게 좋다
+                this.parentElement.remove();
+            });
+            
+            subject.value = '';
+            
+        }
+    </script>
+</body>
+</html>

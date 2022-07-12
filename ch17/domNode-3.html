@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>DOM을 공부합시다.</h1>
+    <button onclick="addContents2();">더 보기</button>
+    <div id="info"></div>
+
+    <script>
+        const imgSrc = 'https://images.pexels.com/photos/55825/gold-bear-gummi-bears-bear-yellow-55825.jpeg?auto=compress&cs=tinysrgb&w=630&h=375&dpr=1';
+        const imgAlt = '구미베어는 귀엽습니다.';
+
+        const divInfo = document.querySelector('#info');
+        function addContents(){
+            const newP = divInfo.appendChild(document.createElement('p'));
+            newP.append('DOM은 document object model의 줄임말입니다.');
+
+            const newImg = divInfo.appendChild(document.createElement('img'));
+            newImg.setAttribute('src', imgSrc);
+            newImg.setAttribute('alt', imgAlt);
+            // newImg.src = imgSrc;
+            // newImg.alt = imgAlt;
+        }
+
+        function addContents2(){
+            const div = document.createElement('div');
+            div.innerHTML = `
+                <p>DOM은 document object model의 줄임말입니다.</p>
+                <img src="${imgSrc}" alt="${imgAlt}">
+            `;
+            divInfo.append(div);
+        }
+    </script>
+</body>
+</html>

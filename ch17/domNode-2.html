@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <h1>DOM을 공부합시다.</h1>
+        <a href="#" onclick="addP(); ">더보기</a> <!--this.onclick=''-->
+        <div id="info"></div>
+    </div>
+    <script>
+        // function addP() {
+        //     const newP = document.createElement('p');
+        //     const txt = 'DOM은 Document Object Model의 줄임말입니다.';
+        //     const txtNode = document.createTextNode(txt);
+        //     newP.appendChild(txtNode); // appendChild는 객체만 넣을 수 있고 리턴이 있답니다 append는 객체와 문자열을 넣을 수 있습니다
+        //     append는 여러개 한 번에 넣을 수 있고 appendChild는 안 됨
+        //     document.querySelector('#info').appendChild(newP); //append 뒤에 붙임
+        // }
+        let cnt = 1;
+        const divInfo = document.querySelector('#info');
+        function addP() {
+            if(divInfo.innerHTML === ''){
+                const newP = document.createElement('p');
+                const txt = `DOM은 Document Object Model의 줄임말입니다. ${cnt++}`;
+                // const txtNode = document.createTextNode(txt);
+                newP.append(txt);
+                divInfo.prepend(newP); // prepend 앞에 붙임
+            } else {
+                divInfo.innerHTML = null;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #main {width: 500px; height: 300px;}
+        #main > img {width: 100%; object-fit: cover;}
+        #sub {width: 500px; height: 100px; display: flex;}
+        #sub > img {flex-grow: 1; object-fit: cover;}
+
+    </style>
+</head>
+<body>
+    <div id="main">
+        <img src="https://images.pexels.com/photos/1835712/pexels-photo-1835712.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="바다">
+    </div>
+    <div id="sub">
+        <img src="https://images.pexels.com/photos/1482193/pexels-photo-1482193.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="바다">
+        <img src="https://images.pexels.com/photos/1705254/pexels-photo-1705254.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="바다">
+        <img src="https://images.pexels.com/photos/1661375/pexels-photo-1661375.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="바다">
+    </div>
+    <script>
+        const mainImg = document.querySelector('#main > img');
+        const subImg = document.querySelectorAll('#sub > img');
+        subImg.forEach(item => {
+            item.addEventListener('click', () => {
+                // mainImg.src = item.src;
+                mainImg.setAttribute('src', item.getAttribute('src'));
+            });
+        });
+
+        // arrow function일 때 this는 함수 자체 / 그냥 function에서 this는 자신을 감싸고 있는... 그것
+        
+        // function changeImg(src){
+        //     mainImg.src = src;
+        // }
+    </script>
+</body>
+</html>
