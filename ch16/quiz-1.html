@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>현재시각 <span id="current" class="display"></span></p>
+    <button onclick="location.reload();">GO</button>
+    <button onclick="stopInter();">STOP</button>
+    <script>
+        let cnt = 0;
+        const interObj = setInterval(() => {
+            const now = new Date().toLocaleTimeString('ko-KR',{hour:"2-digit", minute:"2-digit", second:"2-digit"});
+            document.querySelector('#current').innerHTML = now;
+        }, 1000);
+
+        function stopInter() {
+            clearInterval(interObj);
+        }
+        // function displayNow() {
+        //     const currentTime = new Date().toLocaleTimeString('ko-KR',{hour:"2-digit", minute:"2-digit", second:"2-digit"});
+        //     document.querySelector('#current').innerHTML = currentTime;
+        // }
+    </script>
+</body>
+</html>

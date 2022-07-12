@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const Arr = [1, 2, 3, 4, 5, 4, 3, 2, 1];
+        const Idx = Arr.indexOf(3);
+        console.log(Idx);
+        
+        const lastIdx = Arr.lastIndexOf(3);
+        console.log(lastIdx);
+
+        const fileNm = 'abcdef.fff.jpg';
+        const lastDotIdx = fileNm.lastIndexOf('.');
+        console.log('lastDotIdx : ' + lastDotIdx);
+
+        // 파일 확장자 구분할 때
+        // 값이 있는지 없는지 체크할 때
+
+        console.log(Arr.includes('9'));
+
+    </script>
+</body>
+</html>

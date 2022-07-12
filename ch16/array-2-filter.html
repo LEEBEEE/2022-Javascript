@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const Arr = [4, 20, 55, 32, 99, 47, 65, 1];
+        const Arr2 = Arr.filter(item => item < 40);
+        /*
+        const Arr2 = Arr.filter(item => {
+            if(item < 40){ return true; }
+            return item < 40;
+        });
+        */
+
+        console.log(Arr);
+        console.log(Arr2);
+        
+        const Arr3 = Arr.filter(item => !(item % 2));
+        console.log(Arr3);
+        
+    </script>
+</body>
+</html>

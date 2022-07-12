@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 파괴메소드
+        console.log('----------insert');
+        const Mine = [0, 1, 2, 3];
+        Mine.splice(2, 0, 5);
+        console.log(Mine);
+        Mine.splice(1, 0, 11, 12);
+        console.log(Mine);
+
+        console.log('----------delete');
+        Mine.splice(2, 1); // 2번자리부터 1개 삭제
+        console.log(Mine);
+        Mine.splice(4, 2); // 4번자리부터 2개 삭제
+        console.log(Mine);
+
+        console.log('----------update');
+        Mine.splice(1, 1, 30); // 1번자리부터 1개 삭제 /  1번 자리에 30 추가
+        console.log(Mine);
+
+        console.log('----------push');
+        const pushArr = [10, 20, 30, 40];
+        pushArr.splice(pushArr.length, 0, 50);
+        console.log(pushArr);
+
+        console.log('----------pop');
+        const popArr = [10, 20, 30, 40, 50];
+        popArr.splice(popArr.length-1, 1);
+        console.log(popArr);
+
+        console.log('----------unshift');
+        const unshiftArr = [10, 20, 30, 40, 50];
+        unshiftArr.splice(0, 0, 60);
+        console.log(unshiftArr);
+        
+        console.log('----------shift');
+        const shiftArr = [10, 20, 30, 40, 50];
+        shiftArr.splice(0, 1);
+        console.log(shiftArr);
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const now = new Date();
+        const now2 = new Date();
+        now.myFn = function(){
+            alert('dd');
+        }
+        document.write('현재 시각은 ' + now.toLocaleString()); // 타입이 다른 거 사이에 연산자를 넣으면 형변환이 일어남
+
+        // 클래스, 멤버필드는 숨김 : 은닉화, 캡슐화 (외부에서 멤버 필드는 직접 쓰기 or 읽기가 안 되도록)
+        // getter멤버필드의 값을 가져옴 setter멤버필드의 값을 수정
+    </script>
+</body>
+</html>

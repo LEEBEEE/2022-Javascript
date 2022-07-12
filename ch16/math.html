@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log(Math.PI);
+        console.log(Math.ceil(12.1));
+        console.log(Math.round(12.1));
+        console.log(Math.round(12.5));
+        console.log(Math.floor(12.9));
+        console.log(Math.random()); // 1미만의 값 0.000000000 ~ 0.999999999...
+
+        // 0~9
+        const rVal = Math.floor(Math.random()*10);
+        console.log(rVal);
+
+        // 1~9
+        const rVal2 = Math.floor(Math.random() * 9 ) + 1;
+        // while(true){
+        //     if(rVal2 < 1 || rVal2 > 9){
+        //         console.log('잘못만들었음');
+        //         break;
+        //     }
+        // }
+        console.log(rVal2);
+
+        // 10~20
+        // while(true){
+            const rVal3 = Math.floor(Math.random() * 11) + 10;
+        //     if(rVal3 < 10 || rVal3 > 20){
+        //         console.log('잘못만들었음');
+        //         break;
+        //     }
+        // }
+        console.log(rVal3);
+
+        // Math.floor(Math.random() * (max-min+1)) + min
+        // 25~50
+        const rVal4 = Math.floor(Math.random() * 26) + 25;
+        console.log(rVal4);
+
+        // 25~40
+        const rVal5 = Math.floor(Math.random() * 16) + 25;
+        console.log(rVal5);
+        
+    </script>
+</body>
+</html>
