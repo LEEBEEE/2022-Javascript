@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @keyframes rotate_box{
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        ul {list-style: none;}
+        #result { 
+            margin: 50px;
+            width: 100px;
+            height: 100px;
+        }
+        #result:hover {
+            animation: rotate_box 5s linear infinite;
+            transform-origin: 50% 50%;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li><a href="#" id="first_a">Blue</a></li>
+        <li><a href="#" id="second_a">Orange</a></li>
+        <li><a href="#" id="third_a">Bisque</a></li>
+        <li><a href="#" onclick="changeBg('Pink');">Pink</a></li>
+    </ul>
+    <div id="result"></div>
+
+    <script>
+        const resultDiv = document.querySelector('#result');
+        
+        // html 태그에 onclick을 써서 이벤트 연결
+        function changeBg(color){
+            resultDiv.style.backgroundColor = color;
+        }
+        
+        // id값으로 찾아서 함수 연결
+        const firstA = document.querySelector('#first_a');
+        firstA.onclick = () => changeBg('blue');
+        
+        // onclick 이벤트에 함수 주소값 전달
+        function changeOrange(){
+            resultDiv.style.backgroundColor = 'Orange';
+        }
+
+        function bindFn() {
+            return () => resultDiv.style.backgroundColor = 'orange';
+        }
+        const secA = document.querySelector('#second_a');
+        secA.onclick = bindFn();
+
+        // 파라미터를 사용하는 함수는 이렇게 연결
+        const thirdA = document.querySelector('#third_a');
+        function bindFn2() {
+            return function(){
+                (function(color){
+                    resultDiv.style.backgroundColor = color;
+                })('bisque');
+        }
+        }
+        thirdA.onclick = bindFn2();
+
+    </script>
+</body>
+</html>

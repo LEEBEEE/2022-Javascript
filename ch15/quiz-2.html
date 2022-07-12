@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        const n1 = prompt('값 1');
+        const n2 = prompt('값 2');
+
+        (function(x, y){
+            if(isNaN(x) || isNaN(y) || x === "" || y === "" || x === null || y === null){
+                alert('숫자를 입력해 주세요.');
+                return;
+            }
+
+            if(Number(x) === Number(y)){
+               return alert('숫자가 같습니다.');
+            } else{
+                return alert((Number(x) > Number(y) ? `${x}이(가) ${y}보다` : `${y}이(가) ${x}보다`)+` 큽니다.`);
+            }
+        })(n1, n2)
+        개멍청한 코드
+        */
+
+        (function(){
+            const n1 = prompt('값 1');
+            const n2 = prompt('값 2');
+
+            if(isNaN(n1) || isNaN(n2) || n1 === "" || n2 === "" || n1 === null || n2 === null) {
+                alert('숫자를 입력해 주세요.');
+                return;
+            }
+
+            function alertDiffNum(n1, n2){
+                if(n1 === n2){
+                    alert('숫자가 같습니다.');
+                    return;
+                }
+                const bigNum = n1 > n2 ? n1 : n2;
+                const smallNum = n1 < n2 ? n1 : n2;
+
+                alert(`${bigNum}(이)가 ${smallNum}보다 큽니다.`);
+            }
+            alertDiffNum(Number(n1), Number(n2));
+        })();
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        img {width: 900px;}
+        #desc {display: none;}
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <img src="https://images.pexels.com/photos/4887257/pexels-photo-4887257.jpeg">
+    <button class="over" onclick="flagDisplay('block');">상세 설명 보기</button>
+    <div id="desc" class="detail">
+        <h3>CUTE PINK SHEEP</h3>
+        <p>메에에~~~~~~~~~~~~~~~</p>
+        <button id="close" onclick="flagDisplay('none');">상세 설명 닫기</button>
+    </div>
+    <script>
+        const desc = document.querySelector('#desc');
+
+        /*
+        showDetail = () => desc.style.display = 'block';
+        hideDetail = () => desc.style.display = 'none';
+            -- ▲ ▼같은 거 --
+        function showDetail(){
+            desc.style.display = 'block';
+        }
+        function hideDetail(){
+            desc.style.display = 'none';
+        }
+        */
+
+        function flagDisplay(display){
+            desc.style.display = display;
+        }
+
+    </script>
+</body>
+</html>

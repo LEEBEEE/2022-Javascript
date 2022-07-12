@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const obj = {
+            onclick: null
+        }
+        obj.onclick = function(e){
+            console.log(e);
+            document.write('aa');
+        }
+
+        const e = {
+            'target': '이렇게 만들어준다',
+            x: 124,
+            y: 328,
+        }
+        obj.onclick(e);
+    </script>
+</body>
+</html>
